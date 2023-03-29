@@ -1,4 +1,4 @@
-import {Inject, Injectable} from "@angular/core";
+import {inject, Inject, Injectable} from "@angular/core";
 import {Quote} from "../domain/quote";
 import {QuoteServiceInterface} from "../domain/quoteService.interface";
 import {HttpClient} from "@angular/common/http";
@@ -17,7 +17,7 @@ interface NorrisApiContract {
 @Injectable()
 export class QuoteServiceUsingNorrisAPI implements QuoteServiceInterface {
 
-  private httpClient: HttpClient = Inject(HttpClient);
+  private httpClient: HttpClient = inject(HttpClient);
 
   public getQuote(): Promise<Quote> {
     return firstValueFrom(this.httpClient.get<NorrisApiContract>('https://api.chucknorris.io/jokes/random').pipe(
