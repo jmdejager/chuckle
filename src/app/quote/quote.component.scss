@@ -1,0 +1,45 @@
+$color: var(--quote-color-text, #333);
+
+:host {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.text {
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: 300;
+  font-style: italic;
+  color: $color;
+  padding: 0 2rem;
+
+  &:before, &:after {
+    display: block;
+    font-size: 5rem;
+    position: absolute;
+    opacity: .5;
+  }
+
+  &:before {
+    content: '“';
+    left: 0;
+    top: -1rem;
+  }
+
+  &:after {
+    content: '„';
+    right: 0;
+    bottom: -1rem;
+  }
+}
+
+.author {
+  align-self: flex-end;
+  border-left: 3px solid $color;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  color: $color;
+  font-weight: 600;
+  font-size: 1rem;
+}
