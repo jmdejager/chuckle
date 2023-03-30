@@ -1,4 +1,4 @@
-import {inject, Inject, Injectable} from "@angular/core";
+import {inject, Injectable} from "@angular/core";
 import {Quote} from "../domain/quote";
 import {QuoteServiceInterface} from "../domain/quoteService.interface";
 import {HttpClient} from "@angular/common/http";
