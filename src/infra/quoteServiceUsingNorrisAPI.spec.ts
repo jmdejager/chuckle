@@ -1,5 +1,5 @@
 import {QuoteServiceUsingNorrisAPI} from "./quoteServiceUsingNorrisAPI";
-import {Quote} from "../domain/quote";
+import {Quote, QuoteAuthor, QuoteText} from "../domain/quote";
 import {TestBed} from "@angular/core/testing";
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
 
@@ -31,7 +31,11 @@ describe('QuoteServiceUsingNorrisAPI', () => {
 
     Promise.resolve(service.getQuote()).then(quote => {
       expect(quote).toBeInstanceOf(Quote);
+
+      expect(quote.author).toBeInstanceOf(QuoteAuthor);
       expect(quote.author.toString()).toBe('Chuck Norris');
+
+      expect(quote.text).toBeInstanceOf(QuoteText);
       expect(quote.text.toString()).toBe('Chuck Norris once made a 367 yard putt with a ping-pong ball.');
     });
 
