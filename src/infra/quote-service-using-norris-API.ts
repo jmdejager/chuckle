@@ -1,6 +1,6 @@
 import {inject, Injectable} from "@angular/core";
 import {Quote} from "../domain/quote";
-import {QuoteServiceInterface} from "../domain/quoteService.interface";
+import {QuoteServiceInterface} from "../domain/quote-service.interface";
 import {HttpClient} from "@angular/common/http";
 import {firstValueFrom, map} from "rxjs";
 
