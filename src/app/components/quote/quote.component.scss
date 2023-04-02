@@ -2,21 +2,25 @@ $color: var(--quote-color-text, #333);
 
 :host {
   display: inline-flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 2rem;
+  box-sizing: border-box;
+  padding: 1rem;
+  align-items: flex-start;
 }
 
 .text {
+  flex: 1 1 auto;
   position: relative;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 300;
   font-style: italic;
   color: $color;
-  padding: 0 2rem;
+  padding: 0 1rem;
 
   &:before, &:after {
     display: block;
-    font-size: 5rem;
+    font-size: 2rem;
     position: absolute;
     opacity: .5;
   }
@@ -24,22 +28,23 @@ $color: var(--quote-color-text, #333);
   &:before {
     content: '“';
     left: 0;
-    top: -1rem;
+    top: -.5rem;
   }
 
   &:after {
     content: '„';
     right: 0;
-    bottom: -1rem;
+    bottom: -.5rem;
   }
 }
 
 .author {
+  flex: 0 0 auto;
   align-self: flex-end;
-  border-left: 3px solid $color;
+  border-left: 2px solid $color;
   padding: 0 1rem;
   text-transform: uppercase;
   color: $color;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 1rem;
 }

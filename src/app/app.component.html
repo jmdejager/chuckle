@@ -1,3 +1,7 @@
-<app-quote-list></app-quote-list>
-<button (click)="startQuoteStream()">start</button>
-<button (click)="stopQuoteStream()">stop</button>
+<nav>
+  <ul>
+    <li routerLink="" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">Home</li>
+    <li routerLink="/favorites" routerLinkActive="active">Favorites</li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

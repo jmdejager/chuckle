@@ -1,0 +1,22 @@
+<div class="controls">
+  <button
+    *ngIf="(service.quoteStreamRunning$ | async) === false"
+    (click)="service.startQuoteStream()">
+    Start the stream of quotes please!
+  </button>
+  <button
+    *ngIf="service.quoteStreamRunning$ | async"
+    (click)="service.stopQuoteStream()">
+    Stop the stream of quotes please!
+  </button>
+</div>
+
+<div class="quoteContainer" *ngFor="let quote of this.service.quotes$ | async">
+  <div class="action" (click)="service.makeFavorite(quote)">
+    <span class="material-symbols-outlined">star</span>
+  </div>
+  <app-quote
+    [text]="quote.text.toString()"
+    [author]="quote.author.toString()"
+  ></app-quote>
+</div>
