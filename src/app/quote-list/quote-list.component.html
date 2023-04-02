@@ -1,6 +1,0 @@
-<div *ngFor="let quote of (service.quotes$ | async)">
-  <app-quote
-    [text]="quote.text.toString()"
-    [author]="quote.author.toString()"
-  ></app-quote>
-</div>
