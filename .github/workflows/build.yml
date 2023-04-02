@@ -2,6 +2,7 @@ name: Push container on release
 
 on:
   release:
+    types: [published]
     branches:
       - "main"
 
