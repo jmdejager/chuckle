@@ -5,6 +5,13 @@ export class Quote {
   ) {
   }
 
+  public toRecord(): QuoteRecord {
+    return {
+      author: this.author.toString(),
+      text: this.text.toString(),
+    }
+  }
+
   public static fromRecord(record: QuoteRecord): Quote {
     return new Quote(
       QuoteText.fromString(record.text),
