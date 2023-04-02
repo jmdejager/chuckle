@@ -1,0 +1,9 @@
+<div class="quoteContainer" *ngFor="let quote of this.service.favoriteQuotes$ | async">
+  <div  class="action" (click)="this.service.removeFavorite(quote)">
+    <span class="material-symbols-outlined">delete</span>
+  </div>
+  <app-quote
+    [text]="quote.text.toString()"
+    [author]="quote.author.toString()"
+  ></app-quote>
+</div>

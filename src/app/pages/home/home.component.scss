@@ -1,0 +1,49 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .controls {
+    display: flex;
+    margin: 1rem;
+
+    button {
+      border: 1px solid rgba(teal, .5);
+      background: none;
+      color: teal;
+      font-size: 1.4rem;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 300;
+      padding: .5rem 1rem;
+    }
+  }
+
+  .action {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    opacity: .5;
+    user-select: none;
+
+    &:hover {
+      opacity: .75;
+    }
+
+    &.isFavorite {
+      opacity: 1;
+    }
+  }
+
+  .quoteContainer {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: 100%;
+    max-width: 960px;
+  }
+
+  app-quote{
+    width: 100%;
+  }
+}
