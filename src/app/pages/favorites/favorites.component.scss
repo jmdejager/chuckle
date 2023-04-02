@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .action {
+    opacity: .5;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    user-select: none;
+
+    &:hover {
+      opacity: .75;
+    }
+  }
+
+  .quoteContainer {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: 100%;
+    max-width: 960px;
+  }
+
+  app-quote {
+    width: 100%;
+  }
+}
